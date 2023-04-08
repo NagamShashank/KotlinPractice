@@ -30,7 +30,7 @@ class NewAdapter(val newList: ArrayList<Langdata>, val checkData: CheckData) :
             )
         )
     }
-
+//
     override fun onBindViewHolder(holder: NewAdapter.MyNewView, position: Int) {
         checkData.Check(
             newList,
