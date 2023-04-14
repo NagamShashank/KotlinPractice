@@ -26,6 +26,7 @@ class DrawerMain : AppCompatActivity() {
             drawerLayout.addDrawerListener(toggle)
             toggle.syncState()
 
+            replaceFragment(HomeFragment(),"Home")
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 

@@ -51,6 +51,6 @@ class MainActivity3 : AppCompatActivity() {
 
         adapterGrid = RecyclerViewAdapterGrid((listHarray))
         binding.GRecyclerView.adapter = adapterGrid
-        binding.GRecyclerView.layoutManager = GridLayoutManager(applicationContext,32)
+        binding.GRecyclerView.layoutManager = GridLayoutManager(applicationContext,3)
     }
 }

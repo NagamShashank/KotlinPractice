@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NavigationDrawer.ServicesFragment"
-    android:background="@drawable/sample2">
+    android:background="@drawable/service_background"
+    android:orientation="vertical">
 
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Services"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="18sp"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:layout_marginVertical="15dp"-->
+<!--        android:textColor="@color/white"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/serviceRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Services Fragment"
-        android:textStyle="italic"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/white"/>
+        android:layout_height="match_parent"/>
 
-</FrameLayout>
+
+
+</LinearLayout>
