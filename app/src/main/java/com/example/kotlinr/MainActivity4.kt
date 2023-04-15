@@ -1,17 +1,15 @@
 package com.example.kotlinr
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinr.AdapterPack.NewAdapter
 import com.example.kotlinr.Model.Langdata
 import com.example.kotlinr.databinding.ActivityMain4Binding
-import org.w3c.dom.Text
 
-class MainActivity4 : AppCompatActivity(),NewAdapter.CheckData {
+class MainActivity4 : AppCompatActivity(),NewAdapter.CheckDataListener{
 
     private lateinit var  binding: ActivityMain4Binding
 
@@ -45,16 +43,25 @@ class MainActivity4 : AppCompatActivity(),NewAdapter.CheckData {
         binding.NewRecyclerView.layoutManager = LinearLayoutManager(this)
 
 
-    }
-
-    override fun Check(result: ArrayList<Langdata>, text1: TextView, Picture: ImageView) {
-        super.Check(result,text1, Picture)
-
-
-
 
     }
-}
+
+    override fun checkListener(view: View, position: Int) {
+
+        Toast.makeText(applicationContext,"Hello Thanks !!",Toast.LENGTH_SHORT).show()
+
+
+
+//        super.checkListener(view, position)
+
+    }
+
+
+
+
+
+    }
+
 
 
 
