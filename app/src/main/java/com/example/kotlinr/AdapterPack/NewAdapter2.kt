@@ -54,14 +54,10 @@ class NewAdapter2(val list_new:ArrayList<Langdata>): RecyclerView.Adapter<NewAda
         })
     }
 
-
     override fun getItemCount(): Int {
         return list_new.size
     }
 
     inner class My_View(val itemLayout2Binding: ItemLayout2Binding):RecyclerView.ViewHolder(itemLayout2Binding.root){}
-
-
-    
 
 }

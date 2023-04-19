@@ -8,18 +8,8 @@
     tools:context=".NavigationDrawer.DrawerMain"
     android:id="@+id/drawerLayout">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/Main_FrameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        
-    </LinearLayout>
-    
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/Nav_View"
         android:layout_width="wrap_content"
@@ -29,5 +19,13 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true">
     </com.google.android.material.navigation.NavigationView>
+
+    <fragment
+        android:id="@+id/fragmentView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_nav" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
