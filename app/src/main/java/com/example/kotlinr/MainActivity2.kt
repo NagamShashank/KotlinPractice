@@ -63,10 +63,18 @@ class MainActivity2 : AppCompatActivity() {
 //            }
 //        }
 
-        list.distinct()
+        //list.distinct()
 
-        //newList.sortBy { it.LangText } //Sort By Ascending
-        //newList.sortByDescending { it.LangText } //Sort By Descending
+        list.sortBy { it.LangText } //Sort By Ascending
+        //list.sortByDescending { it.LangText } //Sort By Descending
+
+
+//        val duplicates = list.toHashSet()
+//        duplicates.forEach {
+//            newList.add(it)
+//        }
+
+
 
         adapter = RecyclerViewAdapter(list)
         binding.recyclerViewLang.adapter = adapter

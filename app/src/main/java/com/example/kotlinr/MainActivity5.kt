@@ -2,13 +2,14 @@ package com.example.kotlinr
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinr.AdapterPack.NewAdapter2
 import com.example.kotlinr.Model.Langdata
 import com.example.kotlinr.databinding.ActivityMain5Binding
 
-class MainActivity5 : AppCompatActivity() {
+class MainActivity5 : AppCompatActivity(), NewAdapter2.OnItemListener{
 
     private lateinit var binding : ActivityMain5Binding
 
@@ -36,9 +37,15 @@ class MainActivity5 : AppCompatActivity() {
         New_List.add(Langdata(R.drawable.ruby_logo,"Ruby",""))
         New_List.add(Langdata(R.drawable.swift_logo,"Swift",""))
 
-        adapter = NewAdapter2(New_List)
+        adapter = NewAdapter2(New_List,this)
         binding.newRecyclerview.adapter = adapter
         binding.newRecyclerview.layoutManager = LinearLayoutManager(this)
         
     }
+
+    override fun OnClick(postion: Int) {
+        Toast.makeText(applicationContext,"You Clicked ${postion.toString()}",Toast.LENGTH_SHORT).show()
+    }
+
+
 }

@@ -13,51 +13,48 @@ import com.example.kotlinr.Model.Langdata
 import com.example.kotlinr.databinding.ItemLayout2Binding
 import java.security.AccessController.getContext
 
-class NewAdapter2(val list_new:ArrayList<Langdata>): RecyclerView.Adapter<NewAdapter2.My_View>() {
-
-//    private lateinit var mListener : OnItemClickListener
-//
-//    interface OnItemClickListener{
-//        fun OnItemClick(position: Int)
-//    }
-//
-//    fun setOnItemClickListener(listener: OnItemClickListener){
-//        mListener = listener
-//    }
-
-
-
-
+class NewAdapter2(val list_new:ArrayList<Langdata>,  val onitemListener : OnItemListener): RecyclerView.Adapter<NewAdapter2.My_View>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): My_View {
-        return My_View(ItemLayout2Binding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return My_View(ItemLayout2Binding.inflate(LayoutInflater.from(parent.context),parent,false),onitemListener)
     }
 
     override fun onBindViewHolder(holder: My_View, position: Int) {
         holder.itemLayout2Binding.LanguageText.text = list_new[position].LangText
         holder.itemLayout2Binding.LangImage.setImageResource(list_new[position].Picture)
 
-        holder.itemView.setOnClickListener(View.OnClickListener {
-            val context = holder.itemView.context
-            val nameString = list_new[position].LangText
-            val Picture = list_new[position].Picture
-                //Toast.makeText(context, "You clicked on ${list_new[position].LangText}", Toast.LENGTH_SHORT).show()
-
-            //val bitmap = BitmapFactory.decodeResource(Picture)
-
-            //val context: Context = v.getContext()
-            val intent = Intent(context, LanguagesDetails::class.java)
-            intent.putExtra("LanguageName", nameString)
-            intent.putExtra("LanguagePicture", Picture)
-            context.startActivity(intent)
-
-        })
+//        holder.itemView.setOnClickListener {
+//            val context = holder.itemView.context
+//            val nameString = list_new[position].LangText
+//            val Picture = list_new[position].Picture
+//            //Toast.makeText(context, "You clicked on ${list_new[position].LangText}", Toast.LENGTH_SHORT).show()
+//
+//            //val bitmap = BitmapFactory.decodeResource(Picture)
+//
+//            //val context: Context = v.getContext()
+//            val intent = Intent(context, LanguagesDetails::class.java)
+//            intent.putExtra("LanguageName", nameString)
+//            intent.putExtra("LanguagePicture", Picture)
+//            context.startActivity(intent)
+//
+//        }
     }
 
     override fun getItemCount(): Int {
         return list_new.size
     }
 
-    inner class My_View(val itemLayout2Binding: ItemLayout2Binding):RecyclerView.ViewHolder(itemLayout2Binding.root){}
+    inner class My_View(val itemLayout2Binding: ItemLayout2Binding,onitemListener: OnItemListener)
+        :RecyclerView.ViewHolder(itemLayout2Binding.root){
+            init {
+                itemView.setOnClickListener {
+                    onitemListener.OnClick(adapterPosition)
+                }
+            }
+        }
+
+    interface OnItemListener{
+        fun OnClick(postion: Int)
+    }
 
 }
