@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_new_nav_graph"
+    app:startDestination="@id/navFragment1">
+
+    <fragment
+        android:id="@+id/navFragment1"
+        android:name="com.example.kotlinr.NavigationDrawer_NavigationComponent.NavFragment1"
+        android:label="fragment_nav1"
+        tools:layout="@layout/fragment_nav1" />
+    <fragment
+        android:id="@+id/navFragment2"
+        android:name="com.example.kotlinr.NavigationDrawer_NavigationComponent.NavFragment2"
+        android:label="fragment_nav2"
+        tools:layout="@layout/fragment_nav2" />
+    <fragment
+        android:id="@+id/navFragment3"
+        android:name="com.example.kotlinr.NavigationDrawer_NavigationComponent.NavFragment3"
+        android:label="fragment_nav3"
+        tools:layout="@layout/fragment_nav3" />
+    <fragment
+        android:id="@+id/navFragment4"
+        android:name="com.example.kotlinr.NavigationDrawer_NavigationComponent.NavFragment4"
+        android:label="fragment_nav4"
+        tools:layout="@layout/fragment_nav4" />
+    <fragment
+        android:id="@+id/navFragment5"
+        android:name="com.example.kotlinr.NavigationDrawer_NavigationComponent.NavFragment5"
+        android:label="fragment_nav5"
+        tools:layout="@layout/fragment_nav5" />
+</navigation>
