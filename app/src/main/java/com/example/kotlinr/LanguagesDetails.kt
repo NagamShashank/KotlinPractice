@@ -12,7 +12,6 @@ class LanguagesDetails : AppCompatActivity() {
         binding = ActivityLanguagesDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         //Intent intent = getIntent();
         val name = intent.getStringExtra("LanguageName")
         val Picture = intent.getIntExtra("LanguagePicture",0)
